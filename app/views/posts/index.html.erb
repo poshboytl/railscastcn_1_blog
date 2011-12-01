@@ -1,0 +1,12 @@
+<h1>Recent posts</h1>
+
+
+<% @posts.each do |post| %>
+  <%= render :partial => post %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
+<% end %>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>

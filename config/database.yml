@@ -1,0 +1,8 @@
+development:
+  adapter: mysql2
+  database: blog
+  pool: 5
+  username: root
+  encoding: utf8
+  host: localhost
+
