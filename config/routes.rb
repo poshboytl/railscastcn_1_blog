@@ -4,6 +4,8 @@ Blog::Application.routes.draw do
     resources :comments
   end
 
+  match "/auth/:provider/callback", :to => 'sessions#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
