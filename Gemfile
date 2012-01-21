@@ -19,9 +19,10 @@ end
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-identity'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
