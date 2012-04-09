@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, :through => :taggings
+  belongs_to :user
 
   scope :tag_with, lambda{|tag_name| include(:tags).where("tags.name = ?", tag_name)}
   scope :latter_than, lambda{|time| joins(:taggings).where("taggings.created_at > ?", time)}

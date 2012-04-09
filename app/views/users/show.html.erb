@@ -1,0 +1,15 @@
+<h1>User profile management</h1>
+
+<div id="user">
+  <h3>Nick Name: <%= @user.nickname %></h3>
+  <p>email: <%= @user.email %></p>
+  <p>Admin: <%= @user.admin %></p>
+</div>
+
+<h3>Recent Posts:</h3>
+
+<% @user.posts.each do |p| %>
+  <p>title: <%=link_to p.title, p%> -- <%= p.content %></p>
+<% end %>
+
+<%= link_to "Edit profile", edit_user_path(@user)%>

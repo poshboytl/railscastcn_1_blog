@@ -4,6 +4,8 @@ Blog::Application.routes.draw do
     resources :comments
   end
 
+  resources :users
+
   match "/auth/:provider/callback", :to => 'sessions#create'
   match "/auth/:provider/failure", :to => "sessions#new"
 

@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
   validates :nickname, :presence => true
   validates :email, :presence => true, :uniqueness => true
   has_many :authentications
+  has_many :posts
 
   accepts_nested_attributes_for :authentications
+
+  #attr_accessible :nickname, :email
+
 
   def add_auth(auth)
     authentications.create(:provider => auth[:provider],
