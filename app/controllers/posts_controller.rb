@@ -44,6 +44,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        Attachment.create(:attachment => params[:attachment], :attachmentable => @post) if params[:attachment]
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else

@@ -1,4 +1,7 @@
 <div id="post">
   <h2><%= link_to_unless_current post.title, post %></h2>
   <%= simple_format post.content %>
+  <% post.attachments.each do |attachment| %>
+    <%= image_tag attachment.attachment.url(:thumb) %>
+  <% end %>
 </div>

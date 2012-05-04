@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, :through => :taggings
+  has_many :attachments, :as => :attachmentable
   belongs_to :user
 
   scope :tag_with, lambda{|tag_name| include(:tags).where("tags.name = ?", tag_name)}
